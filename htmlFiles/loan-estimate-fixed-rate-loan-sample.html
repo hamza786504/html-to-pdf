@@ -1,0 +1,738 @@
+<style>
+
+@font-face {
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800&display=swap) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  h1 {
+    /* use string-set to define a new string, copied from document content */
+    string-set: chapter-title content();
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800&display=swap");
+
+  * {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  :root {
+    --gray-light: #e6e7e8;
+    --gray-dark: #c7c8ca;
+  }
+
+  body {
+    background-color: #525659;
+  }
+
+  .content_2 {
+    min-height: 100vh;
+    /* min-height: auto; */
+    background-color: white;
+    width: 100%;
+    padding: 1.4rem;
+  }
+
+  #brand_logo {
+    font-size: 27px;
+    font-weight: 400;
+    color: var(--gray-dark);
+  }
+
+  .text_p {
+    font-size: 11px;
+  }
+
+  .header .headline {
+    font-weight: 500;
+  }
+
+  .header {
+    border-bottom: 2px solid black;
+    /* position:fixed; */
+    /* bottom: 100%; */
+  }
+
+  .weight_bold {
+    font-weight: 800;
+  }
+
+  .table_sm td {
+    font-size: 12px;
+    vertical-align: top;
+  }
+
+  .table_sm td:first-child {
+    font-weight: bold;
+    min-width: 80px;
+  }
+
+  .note {
+    font-size: 10px !important;
+    font-weight: 700;
+  }
+
+  .note .bold {
+    font-weight: 800;
+  }
+
+  .mt-2 .table_sm td {
+    line-height: 1.3;
+  }
+
+  .regular_table_cover > table {
+    border-collapse: collapse;
+  }
+
+  .regular_table_cover > table thead tr th {
+    font-size: 13px;
+  }
+
+  .regular_table_cover > table thead tr th:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    /* border-radius: 10px 10px 0 0; */
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    text-align: left;
+  }
+
+  .table_value_headline {
+    background-color: var(--gray-light);
+  }
+
+  .regular_table_cover > table thead tr th {
+    border-bottom: 2px solid black;
+  }
+
+  .regular_table_cover > table .bucks {
+    min-width: 100px;
+  }
+
+  .regular_table_cover > table tbody td {
+    font-size: 12px;
+    border-bottom: 2px solid black;
+    padding: 5px 10px;
+    vertical-align: top;
+  }
+
+  .regular_table_cover > table > tbody > tr > td:first-child,
+  .regular_table_cover > table > thead > tr > th:first-child {
+    font-weight: bold;
+    min-width: 210px;
+    max-width: 210px;
+    border-right: 2px solid black;
+  }
+
+  .text-lg {
+    font-size: 17px !important;
+  }
+
+  .text-md {
+    font-size: 13px !important;
+  }
+
+  .text-sm {
+    font-size: 10px;
+  }
+
+  .weight_normal {
+    font-weight: 500 !important;
+  }
+
+  .valign_bottom {
+    vertical-align: bottom !important;
+  }
+
+  .border_bottom_none {
+    border-bottom: 0 !important;
+  }
+
+  .border_right_none {
+    border-right: 0 !important;
+  }
+
+  .border_top_bold {
+    border-top: 2px solid black;
+  }
+
+  .valign_middle {
+    vertical-align: middle !important;
+  }
+
+  .decoration_none {
+    text-decoration: none;
+  }
+
+  .projected_payment_table_cover table tbody tr:first-child {
+    background-color: var(--gray-light);
+  }
+
+  .info_section .row:first-child {
+    background-color: var(--gray-light);
+  }
+
+  @media screen and (min-width: 768px) {
+    .table_75_width_responsive {
+      width: 75%;
+    }
+
+    .content {
+      width: 830px;
+      padding: 3.4rem 4rem;
+      margin: auto;
+      padding-bottom: 0.8rem !important;
+    }
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ms-auto {
+    margin-left: auto;
+  }
+
+  .me-0 {
+    margin-right: 0;
+  }
+
+  .my-1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .h-50 {
+    height: 50px !important;
+  }
+
+  .h-30 {
+    height: 30px;
+  }
+
+  .w-50 {
+    width: 50%;
+  }
+
+  .ps-3 {
+    padding-left: 15px;
+  }
+
+  .p-0 {
+    padding: 0 !important;
+  }
+
+  .px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .px-1 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+
+  .py-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .py-1 {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+
+  .p-1 {
+    padding: 5px;
+  }
+
+  .ps-2 {
+    padding-left: 10px;
+  }
+
+  .pb-1 {
+    padding-bottom: 5px;
+  }
+
+  .pb-0 {
+    padding-bottom: 0px;
+  }
+
+  .mt-2 {
+    margin-top: 12px;
+  }
+
+  .mb-1 {
+    margin-bottom: 5px;
+  }
+
+  .mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .text-dark {
+    color: black !important;
+  }
+
+  .text-start {
+    text-align: start;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .text-end {
+    text-align: end !important;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+
+  .flex-1 {
+    flex-grow: 1 !important;
+  }
+
+  .d-inline-flex {
+    display: inline-flex;
+  }
+
+  .align-items-start {
+    align-items: start;
+  }
+
+  .align-items-center {
+    align-items: center;
+  }
+
+  .align-items-end {
+    align-items: end;
+  }
+
+  .justify-content-between {
+    justify-content: space-between;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+  /* footer{
+        position: fixed;
+        bottom: 0;
+      } */
+
+  @media screen and (min-width: 768px) {
+    .w-md-50 {
+      width: 50%;
+    }
+
+    .flex-md-row {
+      flex-direction: row;
+    }
+  }
+  @page {
+    size: A4;
+    margin: 1cm;
+    @top-left {
+      content: element(header);
+    }
+    @bottom-left {
+      width: 100%;
+      content: element(footer);
+    }
+    /* Other settings as needed */
+  }
+</style>
+
+<div class="content_2 d-flex flex-col landscape" id="title-page">
+  <!-- header -->
+  <header class="pb-1 header align-items-end justify-content-between">
+    <div class="brand w-full"><h2 id="brand_logo">FICUS BANK</h2></div>
+    <div class="brand w-full d-flex flex-md-row">
+      <p class="text_p brand w-50 w-md-50">
+        4321 Random Boulevard • Somecity, ST 12340
+      </p>
+      <p class="headline w-50 w-md-50 text_p italic">
+        Save this Loan Estimate to compare with your Closing Disclosure
+      </p>
+    </div>
+  </header>
+  <div class="loan-Page">
+    <!-- banner -->
+    <section class="banner d-flex flex-md-row">
+      <div class="w-full w-md-50">
+        <h2 class="banner_heading weight_bold mb-1">Loan Estimate</h2>
+        <table class="table_sm table_75_width_responsive">
+          <tbody>
+            <tr>
+              <td>DATE ISSUED</td>
+              <td>2/15/2013</td>
+            </tr>
+            <tr>
+              <td class="h-50">APPLICANTS</td>
+              <td>
+                Michael Jones and Mary Stone <br />
+                123 Anywhere Street Anytown, ST 12345
+              </td>
+            </tr>
+            <tr>
+              <td>PROPERTY</td>
+              <td>
+                456 Somewhere Avenue Anytown,<br />
+                ST 12345
+              </td>
+            </tr>
+            <tr>
+              <td>SALE PRICE</td>
+              <td>$180,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="w-full w-md-50 mt-2">
+        <table class="table_sm">
+          <tbody>
+            <tr>
+              <td>LOAN TERM</td>
+              <td>30 years</td>
+            </tr>
+            <tr>
+              <td>PURPOSE</td>
+              <td>Purchase</td>
+            </tr>
+            <tr>
+              <td>PRODUCT</td>
+              <td>Fixed Rate</td>
+            </tr>
+            <tr>
+              <td>LOAN TYPE</td>
+              <td>Conventional FHA VA ___________</td>
+            </tr>
+            <tr>
+              <td>LOAN ID #</td>
+              <td>1234567891</td>
+            </tr>
+            <tr>
+              <td>RATE LOCK</td>
+              <td>NO YES, until 4/16/2013 at 5:00 p.m. EDT</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="note">
+                Before closing, your interest rate, points, and lender credits
+                can change unless you lock the interest rate. All other
+                estimated closing costs expire on
+                <strong class="bold date">3/4/2013</strong> at 5:00 p.m. EDT
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Loan Terms table -->
+    <section class="regular_table_cover loan_terms_table_cover mt-2">
+      <table class="w-full">
+        <thead>
+          <tr>
+            <th class="border_right_none">Loan Terms</th>
+            <th class="bucks"></th>
+            <th>
+              <h4 class="p-1 ps-2 ms-auto text-start me-0 table_value_headline">
+                Can this amount increase after closing?
+              </h4>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Loan Amount</td>
+            <td class="text-lg">$162,000</td>
+            <td class="text-md weight_bold">NO</td>
+          </tr>
+          <tr>
+            <td>Interest Rate</td>
+            <td class="text-lg">3.875%</td>
+            <td class="text-md weight_bold">NO</td>
+          </tr>
+          <tr>
+            <td>
+              Monthly Principal & Interest
+              <p class="text-sm weight_normal">
+                See Projected Payments below for your <br />
+                Estimated Total Monthly Payment
+              </p>
+            </td>
+            <td class="text-lg">$761.78</td>
+            <td class="text-md weight_bold">NO</td>
+          </tr>
+          <tr>
+            <td class="h-50 valign_middle">Prepayment Penalty</td>
+            <td class="text-lg"></td>
+            <td class="p-0">
+              <h3 class="p-1 ps-2 ms-auto text-start me-0 table_value_headline">
+                Does the loan have these features?
+              </h3>
+              <table>
+                <tr>
+                  <td class="border_bottom_none border_right_none text-lg">
+                    YES
+                  </td>
+                  <td class="border_bottom_none">
+                    <ul class="ps-3">
+                      <li>
+                        <p>
+                          As high as $3,240 if you pay off the loan during the
+                          first 2 years
+                        </p>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>Balloon Payment</td>
+            <td class="text-lg"></td>
+            <td class="text-md weight_bold">NO</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Projected Payment table -->
+    <section class="regular_table_cover projected_payment_table_cover mt-2">
+      <table class="w-full">
+        <thead>
+          <tr>
+            <th class="border_right_none">Projected Payments</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Payment Calculation</td>
+            <td class="text-center weight_bold text-md">Years 1-7</td>
+            <td class="text-center weight_bold text-md">Years 8-30</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="h-30">Principal & Interest</p>
+              <p class="h-30">Mortgage Insurance</p>
+              <p>
+                Estimated Escrow
+                <br />
+                <span class="text-sm italic"
+                  >Amount can increase over time</span
+                >
+              </p>
+            </td>
+            <td class="text-center weight_bold">
+              <p class="h-30 text-md">$761.78</p>
+              <p
+                class="h-30 text-center text-md mx-auto"
+                style="width: 70px; position: relative"
+              >
+                <span style="position: absolute; left: 0">+</span>82
+              </p>
+              <p
+                class="h-30 text-center text-md mx-auto"
+                style="width: 70px; position: relative"
+              >
+                <span style="position: absolute; left: 0">+</span>206
+              </p>
+            </td>
+            <td class="text-center weight_bold">
+              <p class="h-30 text-md">$761.78</p>
+              <p
+                class="h-30 text-center text-md mx-auto"
+                style="width: 70px; position: relative"
+              >
+                <span style="position: absolute; left: 0">+</span>82
+              </p>
+              <p
+                class="h-30 text-center text-md mx-auto"
+                style="width: 70px; position: relative"
+              >
+                <span style="position: absolute; left: 0">+</span>206
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="weight_bold">
+              Estimated Total <br />
+              Monthly Payment
+            </td>
+            <td class="text-lg text-center">$761.78</td>
+            <td class="text-lg text-center">$968</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="weight_bold">Estimated Taxes, Insurance& Assessments</p>
+              <p class="italic">Amount can increase over time</p>
+            </td>
+            <td class="p-0" colspan="2">
+              <!-- <h3
+                  class="p-1 ps-2 ms-auto text-start me-0 table_value_headline"
+                >
+                  Does the loan have these features?
+                </h3> -->
+              <table style="border-collapse: collapse; width: 100%">
+                <tr style="background-color: transparent">
+                  <td
+                    class="border_bottom_none border_right_none text-md text-center"
+                    style="min-width: 120px"
+                  >
+                    <p class="text-md weight_bold">$200</p>
+                    a month
+                  </td>
+                  <td class="border_bottom_none border_right_none text-lg p-0">
+                    <table style="border-collapse: collapse">
+                      <thead>
+                        <tr style="background-color: transparent">
+                          <td
+                            class="border_bottom_none text-md weight_bold text-dark"
+                            style="
+                              font-size: 10px;
+                              background-color: transparent;
+                            "
+                          >
+                            This estimate includes
+                          </td>
+                          <td
+                            class="border_bottom_none text-md weight_bold text-start text-dark"
+                            style="
+                              font-size: 10px;
+                              background-color: transparent;
+                            "
+                          >
+                            In escrow?
+                          </td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="background-color: transparent">
+                          <td class="border_bottom_none py-0 my-1">
+                            Property Taxes
+                          </td>
+                          <td
+                            class="border_bottom_none py-0 my-1 border_right_none"
+                          >
+                            YES
+                          </td>
+                        </tr>
+                        <tr style="background-color: transparent">
+                          <td class="border_bottom_none py-0 my-1">
+                            Homeowner’s Insurance
+                          </td>
+                          <td
+                            class="border_bottom_none py-0 my-1 border_right_none"
+                          >
+                            YES
+                          </td>
+                        </tr>
+                        <tr style="background-color: transparent">
+                          <td class="border_bottom_none py-0 my-1">Other:</td>
+                          <td
+                            class="border_bottom_none py-0 my-1 border_right_none"
+                          ></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" class="border_bottom_none py-0 my-1">
+                            <h5 class="mb-1">
+                              See Section G on page 2 for escrowed property
+                              costs. You must pay for other property costs
+                              separately
+                            </h5>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Closing Cost table -->
+    <section class="regular_table_cover closing_cost_table_cover mt-2">
+      <table class="w-full">
+        <thead>
+          <tr>
+            <th class="border_right_none">Costs at Closing</th>
+            <th class="bucks"></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Estimated Closing Costs</td>
+            <td class="text-lg">$8,054</td>
+            <td class="text-md">
+              Includes $5,672 in Loan Costs + $2,382 in Other Costs – $0 in
+              Lender Credits.
+              <p class="text-sm d-inline-flex italic">
+                See page 2 for details.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>Estimated Cash to Close</td>
+            <td class="text-lg">$16,054</td>
+            <td class="text-md">
+              Includes Closing Costs.
+              <span class="text-sm italic"
+                >See Calculating Cash to Close on page 2 for details.</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <p class="text-md text-center mt-2 mb-1">
+      Visit
+      <a
+        href="www.consumerfinance.gov/mortgage-estimate"
+        class="text-dark weight_bold decoration_none"
+        target="_blank"
+        class="link"
+        >www.consumerfinance.gov/mortgage-estimate</a
+      >
+      for general information and tools.
+    </p>
+  </div>
+
+  <footer
+    class=" footer d-flex align-items-center justify-content-between"
+  >
+    <p class="text_p w-50 mb-0">LOAN ESTIMATE</p>
+    <p class="text_p w-50 mb-0 text-end">PAGE 1 OF 3 • LOAN ID #</p>
+  </footer>
+</div>
